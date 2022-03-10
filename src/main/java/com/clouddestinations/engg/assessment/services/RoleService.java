@@ -12,7 +12,7 @@ public class RoleService {
     @Autowired
     private RoleRepository roleRepo;
 
-    public Role createRoleIfNotFound(String roleName){
+    public Role createRoleIfNotFound(String roleName) {
         if (roleRepo.existsByName(roleName)) {
             return roleRepo.findByName(roleName);
         } else {
@@ -20,5 +20,5 @@ public class RoleService {
             return roleRepo.save(role);
         }
     }
-    
+
 }

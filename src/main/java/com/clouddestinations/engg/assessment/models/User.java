@@ -1,5 +1,6 @@
 package com.clouddestinations.engg.assessment.models;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
@@ -12,11 +13,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = 4839669737766614200L;
     @Id
     private String employeeId;
     private String unitName;
     private String employeeName;
+    private String jobTitle;
     private String dateOfJoining;
     private String classification;
     private String managerId;
@@ -24,21 +27,25 @@ public class User {
     private String password;
     private String managerEmail;
     private int level;
+
     @OneToMany(cascade = CascadeType.ALL)
     private List<Rating> ratings;
 
 
     // bi-directional many-to-many association to Role
-    @ManyToMany(cascade=CascadeType.ALL)
-    @JoinTable(name = "roles", joinColumns = { @JoinColumn(name = "EMPLOYEE_ID") }, inverseJoinColumns = {
-            @JoinColumn(name = "ROLE_ID") })
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "roles", joinColumns = {@JoinColumn(name = "EMPLOYEE_ID")}, inverseJoinColumns = {
+            @JoinColumn(name = "ROLE_ID")})
     private Set<Role> roles;
 
-    public User(String employeeId, String unitName, String employeeName, String dateOfJoining, String classification,
-            String managerId, String managerName, String password, String managerEmail, int level, Set<Role> roles) {
+    public User(String employeeId, String unitName, String employeeName, String jobTitle, String dateOfJoining,
+                String classification,
+                String managerId, String managerName, String password, String managerEmail, int level,
+                Set<Role> roles) {
         this.employeeId = employeeId;
         this.unitName = unitName;
         this.employeeName = employeeName;
+        this.jobTitle = jobTitle;
         this.dateOfJoining = dateOfJoining;
         this.classification = classification;
         this.managerId = managerId;
@@ -52,7 +59,6 @@ public class User {
     public User() {
     }
 
-    
 
     public User(String employeeId, String employeeName) {
         this.employeeId = employeeId;
@@ -61,7 +67,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [classification=" + classification + ", dateOfJoining=" + dateOfJoining + ", employeeId="
+        return "User [classification=" + classification + ", jobTitle=" + jobTitle + ", dateOfJoining=" + dateOfJoining + ", employeeId="
                 + employeeId + ", employeeName=" + employeeName + ", level=" + level + ", managerEmail=" + managerEmail
                 + ", managerId=" + managerId + ", managerName=" + managerName + ", password=" + password + ", roles="
                 + roles + ", unitName=" + unitName + "]";
@@ -162,12 +168,11 @@ public class User {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
-    
 
-    
+    public String getJobTitle() {return jobTitle;}
 
-
+    public void setJobTitle(String jobTitle) {this.jobTitle = jobTitle;}
     // Generated code
-    
-    
+
+
 }

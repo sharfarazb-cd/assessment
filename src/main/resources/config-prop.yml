@@ -1,0 +1,31 @@
+app:
+  entity:
+    rating:
+      Rating - FY17 : 2017
+      Rating - FY18 : 2018
+      Rating - FY19 : 2019
+      Rating - FY20 : 2020
+      Rating - FY21 : 2021
+      Rating - FY22 : 2022
+      Rating - FY23 : 2023
+      Rating - FY24 : 2024
+      Rating - FY25 : 2025
+      Rating - FY26 : 2026
+      Rating - FY27 : 2027
+      Rating - FY28 : 2028
+      Rating - FY29 : 2029
+      Rating - FY30 : 2030
+      RatingVariableName : assessedRating
+      RatingYearVariableName : year
+    variables:
+      Sr. No : sNo
+      Unit Name : unitName
+      Emp ID : employeeId
+      Emp Name : employeeName
+      DOJ : dateOfJoining
+      Department : classification
+      Technical/Support/S&M :
+      Manager Emp ID : managerId
+      Manager name : managerName
+      E-mail id of Manager : managerEmail
+      Current Beh. Level: level

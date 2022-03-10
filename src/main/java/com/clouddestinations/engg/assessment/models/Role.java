@@ -1,5 +1,6 @@
 package com.clouddestinations.engg.assessment.models;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -9,7 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Role {
+public class Role implements Serializable {
+    private static final long serialVersionUID = -5608719178436063269L;
+
     public static final String MANAGER = "MANAGER";
     public static final String ADMIN = "ADMIN";
     public static final String USER = "USER";
@@ -17,12 +20,15 @@ public class Role {
     @Id
     @Column(name = "ROLE_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
-    public String name;
-
+    private int id;
+    private String name;
 
     public Role(String name) {
         this.name = name;
+    }
+
+    //Generated code.
+    public Role() {
     }
 
     @Override
@@ -32,7 +38,7 @@ public class Role {
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         return result;
     }
- 
+
     @Override
     public boolean equals(final Object obj) {
         if (this == obj) {
@@ -45,13 +51,6 @@ public class Role {
             return false;
         }
         return Objects.equals(name, ((Role) obj).getName());
-    }
-
-
-
-
-    //Generated code.
-    public Role() {
     }
 
     @Override
@@ -74,5 +73,4 @@ public class Role {
     public void setName(String name) {
         this.name = name;
     }
-    
 }

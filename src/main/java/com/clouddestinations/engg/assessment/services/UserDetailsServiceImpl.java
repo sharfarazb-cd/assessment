@@ -18,7 +18,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService  {
+public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     private UserRepository repo;
@@ -45,6 +45,7 @@ public class UserDetailsServiceImpl implements UserDetailsService  {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
     }
+
     private static List<SimpleGrantedAuthority> buildSimpleGrantedAuthorities(final Set<Role> roles) {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
         for (Role role : roles) {
@@ -52,5 +53,5 @@ public class UserDetailsServiceImpl implements UserDetailsService  {
         }
         return authorities;
     }
-    
+
 }
