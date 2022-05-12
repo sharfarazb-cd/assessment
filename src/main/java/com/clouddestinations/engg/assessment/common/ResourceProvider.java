@@ -5,17 +5,20 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
+import java.util.Map;
 
 @Component
 @ConfigurationProperties(prefix = "app.entity")
 @PropertySource(value = "classpath:config-prop.yml", factory = YmlPropertySourceFactory.class)
 public class ResourceProvider {
-    private HashMap<String, Object> rating = new HashMap<>();
-    private HashMap<String, Object> variables = new HashMap<>();
+    private Map<String, Object> rating = new HashMap<>();
+    private Map<String, Object> variables = new HashMap<>();
 
-    public HashMap<String, Object> getRating() {
+    public Map<String, Object> getRating() {
         return rating;
     }
 
-    public HashMap<String, Object> getVariables() { return variables; }
+    public Map<String, Object> getVariables() {
+        return variables;
+    }
 }

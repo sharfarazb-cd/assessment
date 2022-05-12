@@ -4,59 +4,121 @@ import java.util.List;
 import java.util.Set;
 
 public class UserDTO {
-    private final String employeeId;
-    private final String unitName;
-    private final String employeeName;
-    private final String jobTitle;
-    private final String dateOfJoining;
-    private final String classification;
-    private final String managerId;
-    private final String managerName;
-    private final String password;
-    private final String managerEmail;
-    private final int level;
-    private final List<RatingDTO> ratings;
-    private final Set<RoleDTO> roles;
+    private String employeeId;
+    private String unitName;
+    private String employeeName;
+    private String jobTitle;
+    private String dateOfJoining;
+    private String classification;
+    private String managerId;
+    private String managerName;
+    private String password;
+    private String managerEmail;
+    private int level;
+    private List<RatingDTO> ratings;
+    private Set<RoleDTO> roles;
 
-    public UserDTO(String employeeId, String unitName, String employeeName, String jobTitle, String dateOfJoining,
-                   String classification, String managerId, String managerName, String password, String managerEmail,
-                   int level, List<RatingDTO> ratings, Set<RoleDTO> roles) {
-        this.employeeId = employeeId;
-        this.unitName = unitName;
-        this.employeeName = employeeName;
-        this.jobTitle = jobTitle;
-        this.dateOfJoining = dateOfJoining;
-        this.classification = classification;
-        this.managerId = managerId;
-        this.managerName = managerName;
-        this.password = password;
-        this.managerEmail = managerEmail;
-        this.level = level;
-        this.ratings = ratings;
-        this.roles = roles;
+    public String getEmployeeId() {
+        return employeeId;
     }
 
-    public String getEmployeeId() {return employeeId;}
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
 
-    public String getUnitName() {return unitName;}
+    public String getUnitName() {
+        return unitName;
+    }
 
-    public String getEmployeeName() {return employeeName;}
+    public void setUnitName(String unitName) {
+        this.unitName = unitName;
+    }
 
-    public String getDateOfJoining() {return dateOfJoining;}
+    public String getEmployeeName() {
+        return employeeName;
+    }
 
-    public String getClassification() {return classification;}
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
 
-    public String getManagerId() {return managerId;}
+    public String getJobTitle() {
+        return jobTitle;
+    }
 
-    public String getManagerName() {return managerName;}
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
 
-    public String getPassword() {return password;}
+    public String getDateOfJoining() {
+        return dateOfJoining;
+    }
 
-    public String getManagerEmail() {return managerEmail;}
+    public void setDateOfJoining(String dateOfJoining) {
+        this.dateOfJoining = dateOfJoining;
+    }
 
-    public int getLevel() {return level;}
+    public String getClassification() {
+        return classification;
+    }
 
-    public List<RatingDTO> getRatings() {return ratings;}
+    public void setClassification(String classification) {
+        this.classification = classification;
+    }
 
-    public Set<RoleDTO> getRoles() {return roles;}
+    public String getManagerId() {
+        return managerId;
+    }
+
+    public void setManagerId(String managerId) {
+        this.managerId = managerId;
+    }
+
+    public String getManagerName() {
+        return managerName;
+    }
+
+    public void setManagerName(String managerName) {
+        this.managerName = managerName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getManagerEmail() {
+        return managerEmail;
+    }
+
+    public void setManagerEmail(String managerEmail) {
+        this.managerEmail = managerEmail;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public List<RatingDTO> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(List<RatingDTO> ratings) {
+        this.ratings = ratings;
+    }
+
+    public Set<RoleDTO> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<RoleDTO> roles) {
+        this.roles = roles;
+    }
 }

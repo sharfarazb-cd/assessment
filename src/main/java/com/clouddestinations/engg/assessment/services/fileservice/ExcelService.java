@@ -4,7 +4,11 @@ import com.clouddestinations.engg.assessment.common.ResourceProvider;
 import com.google.gson.Gson;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -29,7 +33,7 @@ public class ExcelService {
         return result;
     }
 
-    private static Workbook getMyWorkbook(MultipartFile file) {
+    private Workbook getMyWorkbook(MultipartFile file) {
         Workbook workbook = null;
         String ext = FilenameUtils.getExtension(file.getOriginalFilename());
         try {
